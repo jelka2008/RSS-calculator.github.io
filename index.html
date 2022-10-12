@@ -1,48 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Calculator</title>
-        <link
-      rel="canonical"
-      href="https://jelka2008.github.io/rss-calculator/index.html"
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Momentum</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@500&display=swap"
+      rel="stylesheet"
     />
-    <meta
-      property="og:url"
-      content="https://jelka2008.github.io/rss-calculator/index.html"
-    />
-    <meta property="og:site_name" content="rss-calculator" />
-    <link href="styles.css" rel="stylesheet" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="css/owfont-regular.css">
   </head>
   <body>
-    <div class="calculator-grid">
-      <div class="output">
-        <div data-previous-operand class="previous-operand"></div>
-        <div data-current-operand class="current-operand"></div>
+    <div id="temp_bg"></div>
+    <button id="next_bgimg_button">
+      <img src="img/Next-PNG-Photo.png" alt="next_bg" />
+    </button>
+    <time id="date"></time>
+    <time id="time"></time>
+    <h1>
+      <span id="greeting"></span>
+      <span id="name" contenteditable="true"></span>
+    </h1>
+
+    <h2 id="focus_question"></h2>
+    <h2 id="focus" contenteditable="true"></h2>
+
+    <div id="quote_wrapper">
+      <img id="waiting" src="img/Waiting.svg" alt="waiting" />
+      <blockquote id="quote_text"></blockquote>
+      <figcaption id="quote_author"></figcaption>
+      <div>
+        <button id="next_quote">Next</button>
+        <button id="close_quote">Close</button>
       </div>
-      <button data-all-clear>AC</button>
-      <button data-delete>DEL</button>
-      <button data-operation>&radic;</button>
-      <button data-operation>x²</button>
-      <button data-number>1</button>
-      <button data-number>2</button>
-      <button data-number>3</button>
-      <button data-operation>÷</button>
-      <button data-number>4</button>
-      <button data-number>5</button>
-      <button data-number>6</button>
-      <button data-operation>*</button>
-      <button data-number>7</button>
-      <button data-number>8</button>
-      <button data-number>9</button>
-      <button data-operation>+</button>
-      <button data-number>.</button>
-      <button data-number>0</button>
-      <button data-equals>=</button>
-      <button data-operation>-</button>
     </div>
+    <div id="settings_wrapper">
+      <div id="settings_enter">
+        <img src="img/Settings-Transparent.png" alt="settings" />
+      </div>
+
+      <div id="settings_list">
+        <div class="settings_item">
+          <div class="language_item">
+            <img id="ru" src="img/flag-of-russia.png" alt="ru" />
+            <span id="ru">RU</span>
+          </div>
+          <div class="language_item">
+            <img
+              id="en"
+              src="img/the-united-kingdom-english-flag.png"
+              alt="en"
+            />
+            <span id="en">EN</span>
+          </div>
+        </div>
+        <div class="settings_item">
+          <div class="timeFormatItem">
+            <span id="24">24h</span>
+          </div>
+          <div class="timeFormatItem">
+            <span id="AmPm">AM/PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="weather_wrapper">
+      <h2 id="city" contenteditable="true"></h3>
+      <div>
+        <span class="weather_icon"><i class="weather-icon owf"></i></span>
+        <span id="temperature">-</span>
+      </div>
+      <div class="weather-description">
+        <h4 id="humidity-label">Влажность</h4>
+        <span id="humidity">-</span>
+        <h4 id="wind-label">Ветер</h4>
+        <span id="wind">-</span>
+      </div>
+    </div>
+    <script src="js/script.js" async defer></script>
+    <!-- <script src="js/nameFocusChange.js" async defer></script> -->
   </body>
 </html>

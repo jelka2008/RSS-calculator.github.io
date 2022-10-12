@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+#temp_bg {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center center;
+}
+body {
+  font-family: "Piazzolla", serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: black;
+}
+#temp_bg {
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+#time {
+  font-size: 8rem;
+  margin-bottom: 2rem;
+}
+#date {
+  line-height: 90%;
+  font-size: 3.5rem;
+}
+
+h1 {
+  margin-bottom: 3rem;
+}
+h2 {
+  margin-bottom: 0.5rem;
+  opacity: 0.6;
+}
+#focus,
+#name {
+  cursor: pointer;
+}
+#next_bgimg_button {
+  top: 2vw;
+  left: 2vw;
+}
+#settings_wrapper {
+  bottom: 4vw;
+  right: 4vw;
+}
+
+#settings_enter {
+  transition: transform 0.8s ease-in-out;
+}
+#next_bgimg_button,
+#settings_wrapper,
+#settings_enter {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgb(93, 82, 73);
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+}
+#next_bgimg_button:hover,
+#settings_enter:hover {
+  background-color: rgb(117, 106, 98);
+  opacity: 0.9;
+}
+#next_bgimg_button img,
+#settings_enter img {
+  width: 40px;
+}
+#settings_list {
+  position: absolute;
+  left: 0px;
+  display: none;
+  align-items: center;
+  background-color: rgb(54, 27, 6);
+  padding: 10px 25px;
+  border-radius: 0.3rem;
+  transition: display 1s ease, left 0.8s ease-in-out;
+}
+.settings_open {
+  display: flex !important;
+  left: -40vw !important;
+  transition: left 0.8s ease-in-out;
+}
+/* #settings_enter img:hover #settings_list{
+  left: 40px;
+  display: flex !important;
+} */
+.settings_item {
+  display: flex;
+  align-items: center;
+}
+.settings_item + .settings_item {
+  margin-left: 25px;
+}
+.language_item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 5px;
+  padding: 2px 5px;
+}
+.language_item img {
+  width: 30px;
+  margin-right: 3px;
+}
+.timeFormatItem {
+  padding: 2px 5px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.active {
+  background-color: rgba(184, 150, 126, 0.5);
+  border-radius: 0.3rem;
+}
+
+#quote_wrapper::after {
+  content: "";
+  z-index: -1;
+  position: fixed;
+  opacity: 0;
+  height: 100vh;
+  width: 100vw;
+}
+#quote_wrapper {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  z-index: 1;
+  top: 30vh;
+  left: 20vw;
+  width: 60vw;
+  background: rgb(105, 67, 51);
+  opacity: 0.9;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  transition: opacity 0.5s;
+}
+#quote_text {
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.03rem;
+}
+#quote_author {
+  margin-bottom: 1rem;
+  align-self: end;
+}
+
+#quote_wrapper button + button {
+  margin-left: 1.5rem;
+}
+#quote_wrapper button {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: rgb(218, 193, 175);
+  padding: 0.25rem 1rem;
+  border-radius: 0.75rem;
+  color: rgb(54, 27, 6);
+}
+#quote_wrapper button:hover {
+  font-size: 1.1rem;
+  background-color: rgb(184, 150, 126);
+}
+#waiting {
+  display: none;
+}
+#weather_wrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(93, 82, 73, 0.5);
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+#weather_wrapper .city {
+  cursor: pointer;
+}
+.weather_icon {
+  width: 20px;
+}
+#weather-icon {
+  width: 30px;
+}
+#city {
+  height: 2rem;
+  text-transform: capitalize;
+}
+#temperature {
+  font-size: 2rem;
+}
+
+@media (max-width: 700px) {
+  #time {
+    font-size: 6rem;
+  }
+  #date {
+    font-size: 2rem;
+  }
+  #quote_wrapper {
+    top: calc(100vh - 80%);
+    width: 80vw;
+    left: 10vw;
+  }
+  #next_bgimg_button,
+  #settings_enter {
+    width: 40px;
+    height: 40px;
+  }
+  #next_bgimg_button img,
+  #settings_enter img {
+    width: 30px;
+  }
+}
+@media (max-width: 460px) {
+  #time {
+    font-size: 3.5rem;
+  }
+  #date {
+    font-size: 1.75rem;
+  }
+  #quote_text {
+    font-size: 1.1rem;
+  }
+  #quote_wrapper button {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+}
