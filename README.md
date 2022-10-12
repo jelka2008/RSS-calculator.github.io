@@ -1,1 +1,1 @@
-# RSS-calculator.github.io
+# rsschool-momentum
